@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 
-<html lang="pt-BR" style="visibility:hidden">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guia de Marca</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  // ── EmailJS config — fill in after setup (see instructions at bottom) ──
   const EMAILJS_PUBLIC_KEY  = 'bmNPfe_CKa4jOHwAO';
   const EMAILJS_SERVICE_ID  = 'service_ptn7zds';
   const EMAILJS_TEMPLATE_ID = 'template_y3z9fxk';
@@ -18,128 +17,134 @@
 :root{
   --gold:#B8974A;--gold-light:#D9C07A;--gold-pale:#F5EDD8;
   --deep:#12100E;--mid:#2C2018;--soft:#7A6A55;--muted:#A89880;
-  --cream:#FAF7F2;--white:#FFFFFF;--border:rgba(184,151,74,.22);
-  --radius:14px;--shadow:0 4px 32px rgba(18,16,14,.07);
+  --cream:#FAF7F2;--white:#fff;--border:rgba(184,151,74,.22);
+  --radius:14px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--deep);min-height:100vh;font-size:15px;line-height:1.65}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--deep);font-size:15px;line-height:1.65}
 
 .lang-bar{position:fixed;top:0;left:0;right:0;z-index:200;background:var(–deep);display:flex;align-items:center;justify-content:center;gap:10px;padding:9px 20px;box-shadow:0 2px 16px rgba(0,0,0,.4)}
 .lang-label{color:var(–gold-light);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
 .lang-toggle{background:rgba(255,255,255,.07);border:1.5px solid var(–gold);border-radius:30px;padding:3px;display:flex;gap:2px}
-.lang-btn{border:none;background:transparent;color:var(–muted);padding:4px 18px;border-radius:24px;font-size:11px;font-weight:600;letter-spacing:.08em;cursor:pointer;transition:all .22s;font-family:‘DM Sans’,sans-serif;text-transform:uppercase}
+.lang-btn{border:none;background:transparent;color:var(–muted);padding:4px 18px;border-radius:24px;font-size:11px;font-weight:600;letter-spacing:.08em;cursor:pointer;font-family:‘DM Sans’,sans-serif;text-transform:uppercase;transition:all .2s}
 .lang-btn.active{background:var(–gold);color:var(–deep)}
 
-.hero{margin-top:46px;background:linear-gradient(150deg,#12100E 0%,#2C2018 60%,#3A2A18 100%);padding:52px 24px 44px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:’’;position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(184,151,74,.18) 0%,transparent 68%);pointer-events:none}
-.hero-ornament{color:var(–gold);font-size:22px;letter-spacing:10px;margin-bottom:14px;opacity:.6;font-family:‘Cormorant Garamond’,serif}
-.hero h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(26px,5vw,42px);font-weight:300;color:#fff;line-height:1.15;margin-bottom:10px}
+.hero{margin-top:46px;background:linear-gradient(150deg,#12100E,#2C2018,#3A2A18);padding:52px 24px 44px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:’’;position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(184,151,74,.18),transparent 68%);pointer-events:none}
+.hero-orn{color:var(–gold);font-size:20px;letter-spacing:10px;margin-bottom:14px;opacity:.6}
+.hero-sub{color:var(–gold-light);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;margin-bottom:16px}
+.hero h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(26px,5vw,42px);font-weight:400;color:#fff;line-height:1.15;margin-bottom:10px}
 .hero h1 em{color:var(–gold-light);font-style:italic}
-.hero-sub{color:var(–gold-light);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;margin-bottom:18px}
-.hero p{color:rgba(255,255,255,.55);font-size:13.5px;max-width:500px;margin:0 auto;line-height:1.75}
+.hero p{color:rgba(255,255,255,.6);font-size:13.5px;max-width:500px;margin:0 auto;line-height:1.75}
 
-.progress-wrap{background:var(–white);padding:14px 24px;border-bottom:1px solid var(–border);position:sticky;top:46px;z-index:190;box-shadow:0 2px 10px rgba(0,0,0,.04)}
-.progress-info{display:flex;justify-content:space-between;font-size:11px;color:var(–muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px}
-.progress-bg{height:3px;background:var(–gold-pale);border-radius:4px;overflow:hidden}
-.progress-fill{height:100%;background:linear-gradient(90deg,var(–gold),#D4A84A);border-radius:4px;transition:width .5s ease;width:0%}
+.prog-wrap{background:#fff;padding:14px 24px;border-bottom:1px solid var(–border);position:sticky;top:46px;z-index:190;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.prog-info{display:flex;justify-content:space-between;font-size:11px;color:var(–muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px}
+.prog-bg{height:3px;background:var(–gold-pale);border-radius:4px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(–gold),#D4A84A);border-radius:4px;transition:width .5s;width:0%}
 
-.container{max-width:740px;margin:0 auto;padding:0 16px 100px}
+.wrap{max-width:740px;margin:0 auto;padding:0 16px 100px}
 
-.section{background:#FFFFFF;border-radius:var(–radius);border:1px solid var(–border);margin:24px 0;overflow:hidden;box-shadow:var(–shadow);opacity:1;transition:opacity .4s ease,transform .4s ease}
-
-.section-header{background:#1A1208;background-color:#1A1208 !important;padding:18px 26px;display:flex;align-items:flex-start;gap:14px}
-.section-num{width:30px;height:30px;background:var(–gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#12100E;flex-shrink:0;margin-top:2px}
-.section-title{font-family:‘Cormorant Garamond’,Georgia,serif;font-size:19px;font-weight:600;color:#FFFFFF !important;line-height:1.2;text-shadow:0 1px 3px rgba(0,0,0,.5)}
-.section-desc{font-size:12px;color:#D9C07A !important;margin-top:3px;line-height:1.5}
-.section-body{padding:26px;display:flex;flex-direction:column;gap:26px}
+.card{background:#fff;border-radius:var(–radius);border:1px solid var(–border);margin:24px 0;overflow:hidden;box-shadow:0 4px 32px rgba(18,16,14,.07)}
+.card-hdr{background:#1A1208;padding:18px 26px;display:flex;align-items:flex-start;gap:14px}
+.card-num{width:30px;height:30px;min-width:30px;background:var(–gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#12100E;margin-top:2px}
+.card-title{font-family:‘Cormorant Garamond’,serif;font-size:20px;font-weight:600;color:#fff;line-height:1.2}
+.card-desc{font-size:12px;color:#D9C07A;margin-top:3px;line-height:1.5}
+.card-body{padding:26px;display:flex;flex-direction:column;gap:26px}
 
 .field{display:flex;flex-direction:column;gap:7px}
-.lbl{font-size:13px;font-weight:600;color:var(–mid);letter-spacing:.03em}
+.lbl{font-size:13px;font-weight:600;color:var(–mid)}
 .hint{font-size:12px;color:var(–soft);line-height:1.55}
-input[type=text],textarea{width:100%;border:1.5px solid var(–border);border-radius:9px;padding:10px 14px;font-family:‘DM Sans’,sans-serif;font-size:14px;color:var(–deep);background:var(–cream);transition:border-color .2s,box-shadow .2s;outline:none}
-input:focus,textarea:focus{border-color:var(–gold);box-shadow:0 0 0 3px rgba(184,151,74,.13);background:var(–white)}
+input[type=text],textarea{width:100%;border:1.5px solid var(–border);border-radius:9px;padding:10px 14px;font-family:‘DM Sans’,sans-serif;font-size:14px;color:var(–deep);background:var(–cream);outline:none;transition:border-color .2s,box-shadow .2s}
+input:focus,textarea:focus{border-color:var(–gold);box-shadow:0 0 0 3px rgba(184,151,74,.13);background:#fff}
 textarea{resize:vertical;min-height:88px}
 
-.visual-grid{display:grid;gap:10px}
+/* VISUAL GRIDS */
+.vgrid{display:grid;gap:10px}
 .g2{grid-template-columns:1fr 1fr}
 .g3{grid-template-columns:repeat(3,1fr)}
 @media(max-width:540px){.g3{grid-template-columns:1fr 1fr}}
-@media(max-width:380px){.g2{grid-template-columns:1fr}}
+@media(max-width:380px){.g2,.g3{grid-template-columns:1fr}}
 
-.vis-opt{border:2px solid var(–border);border-radius:10px;cursor:pointer;overflow:hidden;transition:border-color .2s,box-shadow .2s;position:relative;background:var(–cream)}
-.vis-opt:hover{border-color:var(–gold-light)}
-.vis-opt.selected{border-color:var(–gold);box-shadow:0 0 0 3px rgba(184,151,74,.22)}
-.chk{position:absolute;top:7px;right:7px;width:20px;height:20px;background:var(–gold);border-radius:50%;display:none;align-items:center;justify-content:center;font-size:11px;color:var(–deep);font-weight:700;z-index:2}
-.vis-opt.selected .chk{display:flex}
+.vopt{border:2px solid var(–border);border-radius:10px;cursor:pointer;overflow:hidden;position:relative;background:var(–cream);transition:border-color .2s,box-shadow .2s}
+.vopt:hover{border-color:var(–gold-light)}
+.vopt.sel{border-color:var(–gold);box-shadow:0 0 0 3px rgba(184,151,74,.2)}
+.vtick{position:absolute;top:7px;right:7px;width:20px;height:20px;background:var(–gold);border-radius:50%;display:none;align-items:center;justify-content:center;font-size:11px;color:var(–deep);font-weight:700;z-index:2}
+.vopt.sel .vtick{display:flex}
 .vlbl{padding:9px 10px 10px;font-size:12px;font-weight:600;color:var(–mid);text-align:center;line-height:1.3}
 .vsub{font-size:11px;color:var(–soft);font-weight:400;display:block;margin-top:2px}
 
-.pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-@media(max-width:480px){.pal-grid{grid-template-columns:1fr 1fr}}
-.pal-opt{border:2px solid var(–border);border-radius:10px;cursor:pointer;overflow:hidden;transition:border-color .2s,box-shadow .2s;position:relative}
-.pal-opt.selected{border-color:var(–gold);box-shadow:0 0 0 3px rgba(184,151,74,.22)}
-.pal-opt .chk{position:absolute;top:7px;right:7px;width:20px;height:20px;background:var(–gold);border-radius:50%;display:none;align-items:center;justify-content:center;font-size:11px;color:var(–deep);font-weight:700;z-index:2}
-.pal-opt.selected .chk{display:flex}
+/* PALETTES */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:480px){.pgrid{grid-template-columns:1fr 1fr}}
+.popt{border:2px solid var(–border);border-radius:10px;cursor:pointer;overflow:hidden;position:relative;transition:border-color .2s,box-shadow .2s}
+.popt.sel{border-color:var(–gold);box-shadow:0 0 0 3px rgba(184,151,74,.2)}
+.popt .vtick{position:absolute;top:7px;right:7px;width:20px;height:20px;background:var(–gold);border-radius:50%;display:none;align-items:center;justify-content:center;font-size:11px;color:var(–deep);font-weight:700;z-index:2}
+.popt.sel .vtick{display:flex}
 .swatches{display:flex;height:52px}
 .sw{flex:1}
-.plbl{padding:9px 10px 10px;font-size:12px;font-weight:600;color:var(–mid);text-align:center;line-height:1.3;background:var(–white)}
+.plbl{padding:9px 10px 10px;font-size:12px;font-weight:600;color:var(–mid);text-align:center;line-height:1.3;background:#fff}
 
-.font-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media(max-width:400px){.font-grid{grid-template-columns:1fr}}
-.font-opt{border:2px solid var(–border);border-radius:10px;cursor:pointer;background:var(–cream);padding:18px 16px;position:relative;transition:all .2s}
-.font-opt.selected{border-color:var(–gold);box-shadow:0 0 0 3px rgba(184,151,74,.22);background:var(–white)}
-.font-opt .chk{position:absolute;top:8px;right:8px;width:20px;height:20px;background:var(–gold);border-radius:50%;display:none;align-items:center;justify-content:center;font-size:11px;color:var(–deep);font-weight:700}
-.font-opt.selected .chk{display:flex}
-.fpreview{font-size:22px;line-height:1.2;color:#2C2018;margin-bottom:5px;min-height:30px}
-.ftagline{font-size:11.5px;color:var(–soft);margin-bottom:8px;line-height:1.4}
+/* FONTS */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:400px){.fgrid{grid-template-columns:1fr}}
+.fopt{border:2px solid var(–border);border-radius:10px;cursor:pointer;background:var(–cream);padding:18px 16px;position:relative;transition:all .2s}
+.fopt.sel{border-color:var(–gold);box-shadow:0 0 0 3px rgba(184,151,74,.2);background:#fff}
+.fopt .vtick{position:absolute;top:8px;right:8px;width:20px;height:20px;background:var(–gold);border-radius:50%;display:none;align-items:center;justify-content:center;font-size:11px;color:var(–deep);font-weight:700}
+.fopt.sel .vtick{display:flex}
+.fpreview{font-size:22px;line-height:1.2;color:#12100E;margin-bottom:5px}
+.ftagline{font-size:11px;color:var(–soft);margin-bottom:8px;line-height:1.4}
 .fbadge{display:inline-block;background:var(–gold-pale);color:var(–gold);font-size:10px;font-weight:600;letter-spacing:.06em;padding:2px 8px;border-radius:20px;text-transform:uppercase}
 
-.mood-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-@media(max-width:480px){.mood-grid{grid-template-columns:1fr 1fr}}
-.mood-opt{border:2px solid var(–border);border-radius:10px;cursor:pointer;overflow:hidden;transition:all .2s;position:relative}
-.mood-opt.selected{border-color:var(–gold);box-shadow:0 0 0 3px rgba(184,151,74,.22)}
-.mood-opt .chk{position:absolute;top:7px;right:7px;width:20px;height:20px;background:var(–gold);border-radius:50%;display:none;align-items:center;justify-content:center;font-size:11px;color:var(–deep);font-weight:700;z-index:2}
-.mood-opt.selected .chk{display:flex}
-.mood-vis{height:70px;display:flex;align-items:center;justify-content:center;font-size:28px}
-.mood-lbl{padding:8px 10px 10px;font-size:12px;font-weight:600;color:var(–mid);text-align:center;line-height:1.3;background:var(–white)}
+/* MOOD */
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:480px){.mgrid{grid-template-columns:1fr 1fr}}
+.mopt{border:2px solid var(–border);border-radius:10px;cursor:pointer;overflow:hidden;position:relative;transition:all .2s}
+.mopt.sel{border-color:var(–gold);box-shadow:0 0 0 3px rgba(184,151,74,.2)}
+.mopt .vtick{position:absolute;top:7px;right:7px;width:20px;height:20px;background:var(–gold);border-radius:50%;display:none;align-items:center;justify-content:center;font-size:11px;color:var(–deep);font-weight:700;z-index:2}
+.mopt.sel .vtick{display:flex}
+.mvis{height:70px;display:flex;align-items:center;justify-content:center;font-size:28px}
+.mlbl{padding:8px 10px 10px;font-size:12px;font-weight:600;color:var(–mid);text-align:center;line-height:1.3;background:#fff}
 
-.scale-row{display:flex;gap:8px;flex-wrap:wrap}
-.scale-btn{border:1.5px solid var(–border);border-radius:8px;padding:8px 14px;font-family:‘DM Sans’,sans-serif;font-size:12.5px;font-weight:500;cursor:pointer;background:var(–cream);color:var(–soft);transition:all .2s}
-.scale-btn.active{background:var(–gold);border-color:var(–gold);color:var(–deep);font-weight:600}
+/* SCALE */
+.srow{display:flex;gap:8px;flex-wrap:wrap}
+.sbtn{border:1.5px solid var(–border);border-radius:8px;padding:8px 14px;font-family:‘DM Sans’,sans-serif;font-size:12px;font-weight:500;cursor:pointer;background:var(–cream);color:var(–soft);transition:all .2s}
+.sbtn.act{background:var(–gold);border-color:var(–gold);color:var(–deep);font-weight:600}
 
-.chk-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-@media(max-width:400px){.chk-grid{grid-template-columns:1fr}}
-.chk-opt{border:1.5px solid var(–border);border-radius:9px;padding:10px 14px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:9px;background:var(–cream);font-size:13px;color:var(–soft)}
-.chk-opt.selected{border-color:var(–gold);background:var(–gold-pale);color:var(–deep);font-weight:500}
-.chk-box{width:16px;height:16px;border:1.5px solid var(–border);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:10px}
-.chk-opt.selected .chk-box{background:var(–gold);border-color:var(–gold);color:var(–deep)}
+/* CHECKBOX */
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:400px){.cgrid{grid-template-columns:1fr}}
+.copt{border:1.5px solid var(–border);border-radius:9px;padding:10px 14px;cursor:pointer;display:flex;align-items:center;gap:9px;background:var(–cream);font-size:13px;color:var(–soft);transition:all .2s}
+.copt.sel{border-color:var(–gold);background:var(–gold-pale);color:var(–deep);font-weight:500}
+.cbox{width:16px;height:16px;border:1.5px solid var(–border);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;transition:all .2s}
+.copt.sel .cbox{background:var(–gold);border-color:var(–gold);color:var(–deep)}
 
-.submit-wrap{text-align:center;padding:16px 0 0}
-.btn-submit{background:var(–gold);color:var(–deep);border:none;border-radius:10px;padding:14px 40px;font-family:‘DM Sans’,sans-serif;font-size:15px;font-weight:700;cursor:pointer;letter-spacing:.03em;transition:all .2s;box-shadow:0 4px 20px rgba(184,151,74,.35)}
-.btn-submit:hover{background:#C9A84C;transform:translateY(-1px)}
-.btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
-.email-status{text-align:center;padding:12px 28px 0;font-size:13px;font-weight:500;min-height:28px}
-.email-status.sending{color:var(–soft)}
-.email-status.ok{color:#2D6A4A}
-.email-status.err{color:#8B1A1A}
+/* SUBMIT */
+.sub-wrap{text-align:center;padding-top:16px}
+.sub-btn{background:var(–gold);color:var(–deep);border:none;border-radius:10px;padding:14px 40px;font-family:‘DM Sans’,sans-serif;font-size:15px;font-weight:700;cursor:pointer;letter-spacing:.03em;transition:all .2s;box-shadow:0 4px 20px rgba(184,151,74,.35)}
+.sub-btn:hover{background:#C9A84C;transform:translateY(-1px)}
+.sub-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.email-st{text-align:center;padding:12px 0 0;font-size:13px;font-weight:500;min-height:26px}
+.email-st.sending{color:var(–soft)}
+.email-st.ok{color:#2D6A4A}
+.email-st.err{color:#8B1A1A}
 
-.sum-wrap{display:none;background:var(–white);border-radius:var(–radius);border:1px solid var(–border);margin:24px 0;box-shadow:var(–shadow);overflow:hidden}
-.sum-wrap.show{display:block}
-.sum-hdr{background:linear-gradient(130deg,var(–deep),var(–mid));padding:22px 28px}
-.sum-hdr h2{font-family:‘Cormorant Garamond’,serif;font-size:24px;font-weight:300;color:#fff}
-.sum-hdr p{font-size:12px;color:var(–gold-light);margin-top:4px}
-.sum-body{padding:28px;display:flex;flex-direction:column;gap:0}
-.sum-sec{margin-bottom:22px}
-.sum-sec-title{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(–gold);margin-bottom:10px}
-.sum-row{display:flex;gap:12px;padding:7px 0;border-bottom:1px solid var(–gold-pale)}
-.sum-row:last-child{border-bottom:none}
-.sum-key{font-size:12.5px;color:var(–soft);min-width:180px;flex-shrink:0}
-.sum-val{font-size:12.5px;color:var(–deep);font-weight:500}
-.sum-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:0 28px 28px}
-.btn-act{border:1.5px solid var(–gold);border-radius:9px;padding:10px 26px;font-family:‘DM Sans’,sans-serif;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(–gold);transition:all .2s}
-.btn-act:hover{background:var(–gold);color:var(–deep)}
-.btn-act.primary{background:var(–gold);color:var(–deep)}
+/* SUMMARY */
+.sumwrap{display:none;background:#fff;border-radius:var(–radius);border:1px solid var(–border);margin:24px 0;overflow:hidden;box-shadow:0 4px 32px rgba(18,16,14,.07)}
+.sumwrap.show{display:block}
+.sumhdr{background:#1A1208;padding:22px 28px}
+.sumhdr h2{font-family:‘Cormorant Garamond’,serif;font-size:24px;font-weight:400;color:#fff}
+.sumhdr p{font-size:12px;color:#D9C07A;margin-top:4px}
+.sumbody{padding:28px}
+.sumsec{margin-bottom:20px}
+.sumsec-title{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(–gold);margin-bottom:8px}
+.sumrow{display:flex;gap:12px;padding:6px 0;border-bottom:1px solid var(–gold-pale)}
+.sumrow:last-child{border-bottom:none}
+.sumkey{font-size:12px;color:var(–soft);min-width:170px;flex-shrink:0}
+.sumval{font-size:12px;color:var(–deep);font-weight:500}
+.sumbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:0 28px 28px}
+.abtn{border:1.5px solid var(–gold);border-radius:9px;padding:10px 26px;font-family:‘DM Sans’,sans-serif;font-size:13px;font-weight:600;cursor:pointer;background:transparent;color:var(–gold);transition:all .2s}
+.abtn:hover,.abtn.pri{background:var(–gold);color:var(–deep)}
 
 .toast{position:fixed;bottom:28px;right:24px;background:var(–deep);color:var(–gold-light);padding:12px 22px;border-radius:10px;font-size:13px;font-weight:500;box-shadow:0 6px 28px rgba(0,0,0,.3);transform:translateY(80px);opacity:0;transition:all .35s;z-index:300}
 .toast.show{transform:none;opacity:1}
@@ -151,646 +156,405 @@ textarea{resize:vertical;min-height:88px}
 <div class="lang-bar">
   <span class="lang-label" id="ll">Idioma:</span>
   <div class="lang-toggle">
-    <button class="lang-btn active" id="btn-pt" onclick="setLang('pt')">🇧🇷 PT</button>
-    <button class="lang-btn"        id="btn-en" onclick="setLang('en')">🇺🇸 EN</button>
+    <button class="lang-btn active" onclick="setLang(0)">🇧🇷 PT</button>
+    <button class="lang-btn"        onclick="setLang(1)">🇺🇸 EN</button>
   </div>
 </div>
 
 <div class="hero">
-  <div class="hero-ornament">✦ ✦ ✦</div>
-  <div class="hero-sub" id="h-sub">Guia de Identidade Visual</div>
-  <h1 id="h-title">Vamos criar a sua <em>marca</em></h1>
-  <p id="h-body">Responda com calma — não há respostas certas ou erradas. Suas escolhas vão guiar a criação da sua identidade visual completa.</p>
+  <div class="hero-orn">✦ ✦ ✦</div>
+  <div class="hero-sub" id="hsub">Guia de Identidade Visual</div>
+  <h1 id="htitle">Vamos criar a sua <em>marca</em></h1>
+  <p id="hbody">Responda com calma — não há respostas certas ou erradas. Suas escolhas vão guiar a criação da sua identidade visual completa.</p>
 </div>
 
-<div class="progress-wrap">
-  <div class="progress-info">
-    <span id="prog-lbl">Progresso</span>
-    <span id="prog-pct">0%</span>
-  </div>
-  <div class="progress-bg"><div class="progress-fill" id="prog-fill"></div></div>
+<div class="prog-wrap">
+  <div class="prog-info"><span id="plbl">Progresso</span><span id="ppct">0%</span></div>
+  <div class="prog-bg"><div class="prog-fill" id="pfill"></div></div>
 </div>
 
-<div class="container">
+<div class="wrap">
 
-<!-- ── SECTION 1: NAME ── -->
+<!-- 1: NAME -->
 
-<div class="section visible">
-  <div class="section-header">
-    <div class="section-num">1</div>
-    <div>
-      <div class="section-title" id="s1t">Seu Nome na Marca</div>
-      <div class="section-desc"  id="s1d">Como você quer aparecer para o mundo</div>
-    </div>
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-num">1</div>
+    <div><div class="card-title" id="s1t">Seu Nome na Marca</div><div class="card-desc" id="s1d">Como você quer aparecer para o mundo</div></div>
   </div>
-  <div class="section-body">
+  <div class="card-body">
     <div class="field">
       <label class="lbl" id="q1a">Qual nome você quer usar na sua marca?</label>
       <div class="hint" id="q1b">Escreva exatamente como você quer que apareça — pode ser só o primeiro nome, o primeiro e último, ou qualquer combinação.</div>
-      <input type="text" id="q-name" oninput="updateProgress()" placeholder="ex: Alice Santos">
+      <input type="text" id="q-name" oninput="prog()" placeholder="ex: Alice Santos">
     </div>
     <div class="field">
       <label class="lbl" id="q2a">Você quer adicionar um slogan ou subtítulo?</label>
       <div class="hint" id="q2b">Ex: "Life Insurance Agent" · "Protegendo o que importa" · ou deixe em branco</div>
-      <textarea id="q-tagline" oninput="updateProgress()"></textarea>
+      <textarea id="q-tagline" oninput="prog()"></textarea>
     </div>
   </div>
 </div>
 
-<!-- ── SECTION 2: PERSONALITY ── -->
+<!-- 2: PERSONALITY -->
 
-<div class="section">
-  <div class="section-header">
-    <div class="section-num">2</div>
-    <div>
-      <div class="section-title" id="s2t">Personalidade da Marca</div>
-      <div class="section-desc"  id="s2d">Como você quer que as pessoas se sintam</div>
-    </div>
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-num">2</div>
+    <div><div class="card-title" id="s2t">Personalidade da Marca</div><div class="card-desc" id="s2d">Como você quer que as pessoas se sintam</div></div>
   </div>
-  <div class="section-body">
-
-```
-<div class="field">
-  <label class="lbl" id="q3a">Se a sua marca fosse uma pessoa, como ela seria? (escolha até 3)</label>
-  <div class="mood-grid" id="q-personality">
-    <div class="mood-opt" onclick="multi(this,'q-personality',3)"><div class="chk">✓</div><div class="mood-vis" style="background:#F0EAE0">🤝</div><div class="mood-lbl"><b class="pt">Confiável</b><b class="en" style="display:none">Trustworthy</b><span class="pt"> e acessível</span><span class="en" style="display:none"> &amp; approachable</span></div></div>
-    <div class="mood-opt" onclick="multi(this,'q-personality',3)"><div class="chk">✓</div><div class="mood-vis" style="background:#EAF0EA">💼</div><div class="mood-lbl"><b class="pt">Profissional</b><b class="en" style="display:none">Professional</b><span class="pt"> e sofisticada</span><span class="en" style="display:none"> &amp; sophisticated</span></div></div>
-    <div class="mood-opt" onclick="multi(this,'q-personality',3)"><div class="chk">✓</div><div class="mood-vis" style="background:#EAE8F0">🌟</div><div class="mood-lbl"><b class="pt">Inspiradora</b><b class="en" style="display:none">Inspiring</b><span class="pt"> e motivadora</span><span class="en" style="display:none"> &amp; motivating</span></div></div>
-    <div class="mood-opt" onclick="multi(this,'q-personality',3)"><div class="chk">✓</div><div class="mood-vis" style="background:#F0EAE8">❤️</div><div class="mood-lbl"><b class="pt">Calorosa</b><b class="en" style="display:none">Warm</b><span class="pt"> e empática</span><span class="en" style="display:none"> &amp; empathetic</span></div></div>
-    <div class="mood-opt" onclick="multi(this,'q-personality',3)"><div class="chk">✓</div><div class="mood-vis" style="background:#E8EEF0">🛡️</div><div class="mood-lbl"><b class="pt">Protetora</b><b class="en" style="display:none">Protective</b><span class="pt"> e segura</span><span class="en" style="display:none"> &amp; stable</span></div></div>
-    <div class="mood-opt" onclick="multi(this,'q-personality',3)"><div class="chk">✓</div><div class="mood-vis" style="background:#F0EDE8">✨</div><div class="mood-lbl"><b class="pt">Elegante</b><b class="en" style="display:none">Elegant</b><span class="pt"> e refinada</span><span class="en" style="display:none"> &amp; refined</span></div></div>
-  </div>
-</div>
-
-<div class="field">
-  <label class="lbl" id="q4a">Qual é o público principal que você quer atingir?</label>
-  <div class="chk-grid" id="q-audience">
-    <div class="chk-opt" onclick="multi(this,'q-audience',99)"><div class="chk-box">✓</div><span class="pt">Famílias jovens</span><span class="en" style="display:none">Young families</span></div>
-    <div class="chk-opt" onclick="multi(this,'q-audience',99)"><div class="chk-box">✓</div><span class="pt">Comunidade brasileira</span><span class="en" style="display:none">Brazilian community</span></div>
-    <div class="chk-opt" onclick="multi(this,'q-audience',99)"><div class="chk-box">✓</div><span class="pt">Profissionais 30–50 anos</span><span class="en" style="display:none">Professionals 30–50</span></div>
-    <div class="chk-opt" onclick="multi(this,'q-audience',99)"><div class="chk-box">✓</div><span class="pt">Próximo à aposentadoria</span><span class="en" style="display:none">Near-retirement adults</span></div>
-    <div class="chk-opt" onclick="multi(this,'q-audience',99)"><div class="chk-box">✓</div><span class="pt">Imigrantes e expatriados</span><span class="en" style="display:none">Immigrants &amp; expats</span></div>
-    <div class="chk-opt" onclick="multi(this,'q-audience',99)"><div class="chk-box">✓</div><span class="pt">Comunidade de fé/igreja</span><span class="en" style="display:none">Faith/church community</span></div>
-  </div>
-</div>
-
-<div class="field">
-  <label class="lbl" id="q5a">Qual tom de comunicação você prefere?</label>
-  <div class="hint" id="q5b">Escolha onde você se encaixa em cada escala</div>
-  <div style="display:flex;flex-direction:column;gap:14px;margin-top:10px">
-    <div>
-      <div style="font-size:12px;font-weight:600;color:var(--soft);margin-bottom:6px" id="sc1l">Formal ↔ Descontraído</div>
-      <div class="scale-row" id="scale-formal">
-        <button class="scale-btn" onclick="scl(this,'scale-formal')"><span class="pt">Muito formal</span><span class="en" style="display:none">Very formal</span></button>
-        <button class="scale-btn" onclick="scl(this,'scale-formal')"><span class="pt">Formal</span><span class="en" style="display:none">Formal</span></button>
-        <button class="scale-btn" onclick="scl(this,'scale-formal')"><span class="pt">Equilibrado</span><span class="en" style="display:none">Balanced</span></button>
-        <button class="scale-btn" onclick="scl(this,'scale-formal')"><span class="pt">Descontraído</span><span class="en" style="display:none">Casual</span></button>
-        <button class="scale-btn" onclick="scl(this,'scale-formal')"><span class="pt">Muito informal</span><span class="en" style="display:none">Very casual</span></button>
+  <div class="card-body">
+    <div class="field">
+      <label class="lbl" id="q3a">Se a sua marca fosse uma pessoa, como ela seria? (escolha até 3)</label>
+      <div class="mgrid" id="q-per">
+        <div class="mopt" onclick="multi(this,'q-per',3)"><div class="vtick">✓</div><div class="mvis" style="background:#F0EAE0">🤝</div><div class="mlbl" data-pt="Confiável e acessível" data-en="Trustworthy & approachable">Confiável e acessível</div></div>
+        <div class="mopt" onclick="multi(this,'q-per',3)"><div class="vtick">✓</div><div class="mvis" style="background:#EAF0EA">💼</div><div class="mlbl" data-pt="Profissional e sofisticada" data-en="Professional & sophisticated">Profissional e sofisticada</div></div>
+        <div class="mopt" onclick="multi(this,'q-per',3)"><div class="vtick">✓</div><div class="mvis" style="background:#EAE8F0">🌟</div><div class="mlbl" data-pt="Inspiradora e motivadora" data-en="Inspiring & motivating">Inspiradora e motivadora</div></div>
+        <div class="mopt" onclick="multi(this,'q-per',3)"><div class="vtick">✓</div><div class="mvis" style="background:#F0EAE8">❤️</div><div class="mlbl" data-pt="Calorosa e empática" data-en="Warm & empathetic">Calorosa e empática</div></div>
+        <div class="mopt" onclick="multi(this,'q-per',3)"><div class="vtick">✓</div><div class="mvis" style="background:#E8EEF0">🛡️</div><div class="mlbl" data-pt="Protetora e segura" data-en="Protective & stable">Protetora e segura</div></div>
+        <div class="mopt" onclick="multi(this,'q-per',3)"><div class="vtick">✓</div><div class="mvis" style="background:#F0EDE8">✨</div><div class="mlbl" data-pt="Elegante e refinada" data-en="Elegant & refined">Elegante e refinada</div></div>
       </div>
     </div>
-    <div>
-      <div style="font-size:12px;font-weight:600;color:var(--soft);margin-bottom:6px" id="sc2l">Sério ↔ Alegre</div>
-      <div class="scale-row" id="scale-serious">
-        <button class="scale-btn" onclick="scl(this,'scale-serious')"><span class="pt">Muito sério</span><span class="en" style="display:none">Very serious</span></button>
-        <button class="scale-btn" onclick="scl(this,'scale-serious')"><span class="pt">Sério</span><span class="en" style="display:none">Serious</span></button>
-        <button class="scale-btn" onclick="scl(this,'scale-serious')"><span class="pt">Equilibrado</span><span class="en" style="display:none">Balanced</span></button>
-        <button class="scale-btn" onclick="scl(this,'scale-serious')"><span class="pt">Alegre</span><span class="en" style="display:none">Cheerful</span></button>
-        <button class="scale-btn" onclick="scl(this,'scale-serious')"><span class="pt">Muito alegre</span><span class="en" style="display:none">Very cheerful</span></button>
+    <div class="field">
+      <label class="lbl" id="q4a">Qual é o público principal que você quer atingir?</label>
+      <div class="cgrid" id="q-aud">
+        <div class="copt" onclick="multi(this,'q-aud',99)"><div class="cbox">✓</div><span data-pt="Famílias jovens" data-en="Young families">Famílias jovens</span></div>
+        <div class="copt" onclick="multi(this,'q-aud',99)"><div class="cbox">✓</div><span data-pt="Comunidade brasileira" data-en="Brazilian community">Comunidade brasileira</span></div>
+        <div class="copt" onclick="multi(this,'q-aud',99)"><div class="cbox">✓</div><span data-pt="Profissionais 30–50 anos" data-en="Professionals 30–50">Profissionais 30–50 anos</span></div>
+        <div class="copt" onclick="multi(this,'q-aud',99)"><div class="cbox">✓</div><span data-pt="Próximo à aposentadoria" data-en="Near-retirement adults">Próximo à aposentadoria</span></div>
+        <div class="copt" onclick="multi(this,'q-aud',99)"><div class="cbox">✓</div><span data-pt="Imigrantes e expatriados" data-en="Immigrants & expats">Imigrantes e expatriados</span></div>
+        <div class="copt" onclick="multi(this,'q-aud',99)"><div class="cbox">✓</div><span data-pt="Comunidade de fé/igreja" data-en="Faith/church community">Comunidade de fé/igreja</span></div>
+      </div>
+    </div>
+    <div class="field">
+      <label class="lbl" id="q5a">Qual tom de comunicação você prefere?</label>
+      <div class="hint" id="q5b">Escolha onde você se encaixa em cada escala</div>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-top:10px">
+        <div>
+          <div style="font-size:12px;font-weight:600;color:var(--soft);margin-bottom:6px" id="sc1">Formal ↔ Descontraído</div>
+          <div class="srow" id="scale-f">
+            <button class="sbtn" onclick="scl(this,'scale-f')" data-pt="Muito formal"    data-en="Very formal">Muito formal</button>
+            <button class="sbtn" onclick="scl(this,'scale-f')" data-pt="Formal"          data-en="Formal">Formal</button>
+            <button class="sbtn" onclick="scl(this,'scale-f')" data-pt="Equilibrado"     data-en="Balanced">Equilibrado</button>
+            <button class="sbtn" onclick="scl(this,'scale-f')" data-pt="Descontraído"    data-en="Casual">Descontraído</button>
+            <button class="sbtn" onclick="scl(this,'scale-f')" data-pt="Muito informal"  data-en="Very casual">Muito informal</button>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:600;color:var(--soft);margin-bottom:6px" id="sc2">Sério ↔ Alegre</div>
+          <div class="srow" id="scale-s">
+            <button class="sbtn" onclick="scl(this,'scale-s')" data-pt="Muito sério"  data-en="Very serious">Muito sério</button>
+            <button class="sbtn" onclick="scl(this,'scale-s')" data-pt="Sério"        data-en="Serious">Sério</button>
+            <button class="sbtn" onclick="scl(this,'scale-s')" data-pt="Equilibrado"  data-en="Balanced">Equilibrado</button>
+            <button class="sbtn" onclick="scl(this,'scale-s')" data-pt="Alegre"       data-en="Cheerful">Alegre</button>
+            <button class="sbtn" onclick="scl(this,'scale-s')" data-pt="Muito alegre" data-en="Very cheerful">Muito alegre</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-```
 
+<!-- 3: COLORS -->
+
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-num">3</div>
+    <div><div class="card-title" id="s3t">Cores da Marca</div><div class="card-desc" id="s3d">As cores que vão representar você</div></div>
+  </div>
+  <div class="card-body">
+    <div class="field">
+      <label class="lbl" id="q6a">Qual paleta faz você pensar: "É exatamente assim que me sinto"?</label>
+      <div class="hint" id="q6b">Escolha a que mais combina com você</div>
+      <div class="pgrid" id="q-pal" style="margin-top:8px">
+        <div class="popt" onclick="one(this,'q-pal')"><div class="vtick">✓</div><div class="swatches"><div class="sw" style="background:#1B2B4B"></div><div class="sw" style="background:#2C4A7C"></div><div class="sw" style="background:#C9A84C"></div><div class="sw" style="background:#F5F0E8"></div></div><div class="plbl" data-pt="Azul & Dourado — Autoridade e luxo" data-en="Navy & Gold — Authority & luxury">Azul &amp; Dourado<span class="vsub">Autoridade e luxo</span></div></div>
+        <div class="popt" onclick="one(this,'q-pal')"><div class="vtick">✓</div><div class="swatches"><div class="sw" style="background:#2D5A4A"></div><div class="sw" style="background:#4A8C72"></div><div class="sw" style="background:#C8D9B8"></div><div class="sw" style="background:#F4F7F2"></div></div><div class="plbl" data-pt="Verde & Creme — Crescimento e confiança" data-en="Green & Cream — Growth & trust">Verde &amp; Creme<span class="vsub">Crescimento e confiança</span></div></div>
+        <div class="popt" onclick="one(this,'q-pal')"><div class="vtick">✓</div><div class="swatches"><div class="sw" style="background:#12100E"></div><div class="sw" style="background:#3A3028"></div><div class="sw" style="background:#C9A84C"></div><div class="sw" style="background:#FAF7F2"></div></div><div class="plbl" data-pt="Preto & Ouro — Sofisticação e elegância" data-en="Black & Gold — Sophistication & elegance">Preto &amp; Ouro<span class="vsub">Sofisticação e elegância</span></div></div>
+        <div class="popt" onclick="one(this,'q-pal')"><div class="vtick">✓</div><div class="swatches"><div class="sw" style="background:#6B3A5A"></div><div class="sw" style="background:#9B5A8A"></div><div class="sw" style="background:#E8C8D8"></div><div class="sw" style="background:#FAF4F8"></div></div><div class="plbl" data-pt="Vinho & Rosa — Calor e feminilidade" data-en="Plum & Rose — Warmth & femininity">Vinho &amp; Rosa<span class="vsub">Calor e feminilidade</span></div></div>
+        <div class="popt" onclick="one(this,'q-pal')"><div class="vtick">✓</div><div class="swatches"><div class="sw" style="background:#8B4513"></div><div class="sw" style="background:#C4813A"></div><div class="sw" style="background:#F0D5A8"></div><div class="sw" style="background:#FBF6EE"></div></div><div class="plbl" data-pt="Terracota & Areia — Acolhedor e próximo" data-en="Terracotta & Sand — Warm & approachable">Terracota &amp; Areia<span class="vsub">Acolhedor e próximo</span></div></div>
+        <div class="popt" onclick="one(this,'q-pal')"><div class="vtick">✓</div><div class="swatches"><div class="sw" style="background:#1A3A5C"></div><div class="sw" style="background:#B22222"></div><div class="sw" style="background:#E8E0D0"></div><div class="sw" style="background:#F8F6F2"></div></div><div class="plbl" data-pt="Azul & Vermelho — Força e patriotismo" data-en="Blue & Red — Strength & patriotism">Azul &amp; Vermelho<span class="vsub">Força e patriotismo</span></div></div>
+      </div>
+    </div>
+    <div class="field"><label class="lbl" id="q7a">Alguma cor que você definitivamente NÃO quer na sua marca?</label><input type="text" id="q-cnо" oninput="prog()"></div>
+    <div class="field"><label class="lbl" id="q8a">Você tem alguma cor favorita que gostaria de incorporar?</label><input type="text" id="q-cyes" oninput="prog()"></div>
   </div>
 </div>
 
-<!-- ── SECTION 3: COLORS ── -->
+<!-- 4: TYPOGRAPHY -->
 
-<div class="section">
-  <div class="section-header">
-    <div class="section-num">3</div>
-    <div>
-      <div class="section-title" id="s3t">Cores da Marca</div>
-      <div class="section-desc"  id="s3d">As cores que vão representar você</div>
-    </div>
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-num">4</div>
+    <div><div class="card-title" id="s4t">Estilo de Tipografia</div><div class="card-desc" id="s4d">A fonte diz muito sobre quem você é</div></div>
   </div>
-  <div class="section-body">
-
-```
-<div class="field">
-  <label class="lbl" id="q6a">Qual paleta faz você pensar: "É exatamente assim que me sinto"?</label>
-  <div class="hint" id="q6b">Escolha a que mais combina com você</div>
-  <div class="pal-grid" id="q-palette" style="margin-top:8px">
-
-    <div class="pal-opt" onclick="one(this,'q-palette')"><div class="chk">✓</div>
-      <div class="swatches"><div class="sw" style="background:#1B2B4B"></div><div class="sw" style="background:#2C4A7C"></div><div class="sw" style="background:#C9A84C"></div><div class="sw" style="background:#F5F0E8"></div></div>
-      <div class="plbl"><b class="pt">Azul &amp; Dourado</b><b class="en" style="display:none">Navy &amp; Gold</b><span class="vsub pt"> Autoridade e luxo</span><span class="vsub en" style="display:none"> Authority &amp; luxury</span></div>
-    </div>
-
-    <div class="pal-opt" onclick="one(this,'q-palette')"><div class="chk">✓</div>
-      <div class="swatches"><div class="sw" style="background:#2D5A4A"></div><div class="sw" style="background:#4A8C72"></div><div class="sw" style="background:#C8D9B8"></div><div class="sw" style="background:#F4F7F2"></div></div>
-      <div class="plbl"><b class="pt">Verde &amp; Creme</b><b class="en" style="display:none">Green &amp; Cream</b><span class="vsub pt"> Crescimento e confiança</span><span class="vsub en" style="display:none"> Growth &amp; trust</span></div>
-    </div>
-
-    <div class="pal-opt" onclick="one(this,'q-palette')"><div class="chk">✓</div>
-      <div class="swatches"><div class="sw" style="background:#12100E"></div><div class="sw" style="background:#3A3028"></div><div class="sw" style="background:#C9A84C"></div><div class="sw" style="background:#FAF7F2"></div></div>
-      <div class="plbl"><b class="pt">Preto &amp; Ouro</b><b class="en" style="display:none">Black &amp; Gold</b><span class="vsub pt"> Sofisticação e elegância</span><span class="vsub en" style="display:none"> Sophistication &amp; elegance</span></div>
-    </div>
-
-    <div class="pal-opt" onclick="one(this,'q-palette')"><div class="chk">✓</div>
-      <div class="swatches"><div class="sw" style="background:#6B3A5A"></div><div class="sw" style="background:#9B5A8A"></div><div class="sw" style="background:#E8C8D8"></div><div class="sw" style="background:#FAF4F8"></div></div>
-      <div class="plbl"><b class="pt">Vinho &amp; Rosa</b><b class="en" style="display:none">Plum &amp; Rose</b><span class="vsub pt"> Calor e feminilidade</span><span class="vsub en" style="display:none"> Warmth &amp; femininity</span></div>
-    </div>
-
-    <div class="pal-opt" onclick="one(this,'q-palette')"><div class="chk">✓</div>
-      <div class="swatches"><div class="sw" style="background:#8B4513"></div><div class="sw" style="background:#C4813A"></div><div class="sw" style="background:#F0D5A8"></div><div class="sw" style="background:#FBF6EE"></div></div>
-      <div class="plbl"><b class="pt">Terracota &amp; Areia</b><b class="en" style="display:none">Terracotta &amp; Sand</b><span class="vsub pt"> Acolhedor e próximo</span><span class="vsub en" style="display:none"> Warm &amp; approachable</span></div>
-    </div>
-
-    <div class="pal-opt" onclick="one(this,'q-palette')"><div class="chk">✓</div>
-      <div class="swatches"><div class="sw" style="background:#1A3A5C"></div><div class="sw" style="background:#B22222"></div><div class="sw" style="background:#E8E0D0"></div><div class="sw" style="background:#F8F6F2"></div></div>
-      <div class="plbl"><b class="pt">Azul &amp; Vermelho</b><b class="en" style="display:none">Blue &amp; Red</b><span class="vsub pt"> Força e patriotismo</span><span class="vsub en" style="display:none"> Strength &amp; patriotism</span></div>
-    </div>
-
-  </div>
-</div>
-
-<div class="field">
-  <label class="lbl" id="q7a">Alguma cor que você definitivamente NÃO quer na sua marca?</label>
-  <input type="text" id="q-color-no" oninput="updateProgress()">
-</div>
-<div class="field">
-  <label class="lbl" id="q8a">Você tem alguma cor favorita que gostaria de incorporar?</label>
-  <input type="text" id="q-color-yes" oninput="updateProgress()">
-</div>
-```
-
-  </div>
-</div>
-
-<!-- ── SECTION 4: TYPOGRAPHY ── -->
-
-<div class="section">
-  <div class="section-header">
-    <div class="section-num">4</div>
-    <div>
-      <div class="section-title" id="s4t">Estilo de Tipografia</div>
-      <div class="section-desc"  id="s4d">A fonte diz muito sobre quem você é</div>
-    </div>
-  </div>
-  <div class="section-body">
+  <div class="card-body">
     <div class="field">
       <label class="lbl" id="q9a">Qual estilo de letra representa melhor sua marca?</label>
       <div class="hint" id="q9b">Veja como ficaria seu nome em cada estilo</div>
-      <div class="font-grid" id="q-font" style="margin-top:8px">
-
-```
-    <div class="font-opt" onclick="one(this,'q-font')"><div class="chk">✓</div>
-      <div class="fpreview" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic" id="fp1">Seu Nome</div>
-      <div class="ftagline" style="font-family:'Cormorant Garamond',serif"><span class="pt">Life Insurance · Proteção para sua família</span><span class="en" style="display:none">Life Insurance · Protection for your family</span></div>
-      <span class="fbadge"><span class="pt">Elegante / Clássica</span><span class="en" style="display:none">Elegant / Classic</span></span>
+      <div class="fgrid" id="q-font" style="margin-top:8px">
+        <div class="fopt" onclick="one(this,'q-font')" data-val="Elegante / Clássica"><div class="vtick">✓</div><div class="fpreview" style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600">Seu Nome</div><div class="ftagline" style="font-family:'Cormorant Garamond',serif" id="ft1">Life Insurance · Proteção para sua família</div><span class="fbadge" id="fb1">Elegante / Clássica</span></div>
+        <div class="fopt" onclick="one(this,'q-font')" data-val="Moderna / Limpa"><div class="vtick">✓</div><div class="fpreview" style="font-family:'DM Sans',sans-serif;font-weight:600">Seu Nome</div><div class="ftagline" style="font-family:'DM Sans',sans-serif;font-weight:300" id="ft2">Life Insurance · Proteção para sua família</div><span class="fbadge" id="fb2">Moderna / Limpa</span></div>
+        <div class="fopt" onclick="one(this,'q-font')" data-val="Tradicional / Sólida"><div class="vtick">✓</div><div class="fpreview" style="font-family:Georgia,serif;font-weight:700">Seu Nome</div><div class="ftagline" style="font-family:Georgia,serif;font-size:11px" id="ft3">Life Insurance · Proteção para sua família</div><span class="fbadge" id="fb3">Tradicional / Sólida</span></div>
+        <div class="fopt" onclick="one(this,'q-font')" data-val="Contemporânea / Bold"><div class="vtick">✓</div><div class="fpreview" style="font-family:'Trebuchet MS',sans-serif;letter-spacing:.08em;text-transform:uppercase;font-size:16px">Seu Nome</div><div class="ftagline" style="font-family:'Trebuchet MS',sans-serif;font-size:10px;letter-spacing:.05em;text-transform:uppercase" id="ft4">Life Insurance · Proteção para sua família</div><span class="fbadge" id="fb4">Contemporânea / Bold</span></div>
+      </div>
     </div>
-
-    <div class="font-opt" onclick="one(this,'q-font')"><div class="chk">✓</div>
-      <div class="fpreview" style="font-family:'DM Sans',sans-serif;font-weight:600" id="fp2">Seu Nome</div>
-      <div class="ftagline" style="font-family:'DM Sans',sans-serif;font-weight:300"><span class="pt">Life Insurance · Proteção para sua família</span><span class="en" style="display:none">Life Insurance · Protection for your family</span></div>
-      <span class="fbadge"><span class="pt">Moderna / Limpa</span><span class="en" style="display:none">Modern / Clean</span></span>
-    </div>
-
-    <div class="font-opt" onclick="one(this,'q-font')"><div class="chk">✓</div>
-      <div class="fpreview" style="font-family:Georgia,serif;font-weight:700" id="fp3">Seu Nome</div>
-      <div class="ftagline" style="font-family:Georgia,serif;font-size:11px"><span class="pt">Life Insurance · Proteção para sua família</span><span class="en" style="display:none">Life Insurance · Protection for your family</span></div>
-      <span class="fbadge"><span class="pt">Tradicional / Sólida</span><span class="en" style="display:none">Traditional / Solid</span></span>
-    </div>
-
-    <div class="font-opt" onclick="one(this,'q-font')"><div class="chk">✓</div>
-      <div class="fpreview" style="font-family:'Trebuchet MS',sans-serif;letter-spacing:.08em;text-transform:uppercase;font-size:16px" id="fp4">Seu Nome</div>
-      <div class="ftagline" style="font-family:'Trebuchet MS',sans-serif;font-size:10px;letter-spacing:.06em;text-transform:uppercase"><span class="pt">Life Insurance · Proteção para sua família</span><span class="en" style="display:none">Life Insurance · Protection for your family</span></div>
-      <span class="fbadge"><span class="pt">Contemporânea / Bold</span><span class="en" style="display:none">Contemporary / Bold</span></span>
-    </div>
-
-  </div>
-</div>
-```
-
   </div>
 </div>
 
-<!-- ── SECTION 5: INSPIRATION ── -->
+<!-- 5: INSPIRATION -->
 
-<div class="section">
-  <div class="section-header">
-    <div class="section-num">5</div>
-    <div>
-      <div class="section-title" id="s5t">Inspiração e Referências</div>
-      <div class="section-desc"  id="s5d">O que você admira em outras marcas</div>
-    </div>
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-num">5</div>
+    <div><div class="card-title" id="s5t">Inspiração e Referências</div><div class="card-desc" id="s5d">O que você admira em outras marcas</div></div>
   </div>
-  <div class="section-body">
-
-```
-<div class="field">
-  <label class="lbl" id="q10a">Qual dessas marcas tem um visual que você admira? (escolha até 2)</label>
-  <div class="hint" id="q10b">Não precisa ser de seguros — qualquer marca que te inspire</div>
-  <div class="visual-grid g3" id="q-inspo" style="margin-top:8px">
-
-    <div class="vis-opt" onclick="multi(this,'q-inspo',2)"><div class="chk">✓</div>
-      <div style="background:#000;height:60px;display:flex;align-items:center;justify-content:center"><span style="color:white;font-family:Georgia,serif;font-size:20px;font-weight:700;letter-spacing:.1em">CHANEL</span></div>
-      <div class="vlbl">Chanel<span class="vsub pt"> Atemporal, mínimo, luxo</span><span class="vsub en" style="display:none"> Timeless, minimal, luxury</span></div>
+  <div class="card-body">
+    <div class="field">
+      <label class="lbl" id="q10a">Qual dessas marcas tem um visual que você admira? (escolha até 2)</label>
+      <div class="hint" id="q10b">Não precisa ser de seguros — qualquer marca que te inspire</div>
+      <div class="vgrid g3" id="q-ins" style="margin-top:8px">
+        <div class="vopt" onclick="multi(this,'q-ins',2)" data-val="Chanel"><div class="vtick">✓</div><div style="background:#000;height:60px;display:flex;align-items:center;justify-content:center"><span style="color:#fff;font-family:Georgia,serif;font-size:20px;font-weight:700;letter-spacing:.1em">CHANEL</span></div><div class="vlbl">Chanel<span class="vsub" data-pt="Atemporal, mínimo, luxo" data-en="Timeless, minimal, luxury">Atemporal, mínimo, luxo</span></div></div>
+        <div class="vopt" onclick="multi(this,'q-ins',2)" data-val="New York Life"><div class="vtick">✓</div><div style="background:#1A3A5C;height:60px;display:flex;align-items:center;justify-content:center"><span style="color:#C9A84C;font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.1em">NEW YORK LIFE</span></div><div class="vlbl">New York Life<span class="vsub" data-pt="Autoridade, azul, clássico" data-en="Authority, navy, classic">Autoridade, azul, clássico</span></div></div>
+        <div class="vopt" onclick="multi(this,'q-ins',2)" data-val="Farmers"><div class="vtick">✓</div><div style="background:#2D5A4A;height:60px;display:flex;align-items:center;justify-content:center"><span style="color:#fff;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600">Farmers</span></div><div class="vlbl">Farmers<span class="vsub" data-pt="Confiável, verde, familiar" data-en="Reliable, green, family">Confiável, verde, familiar</span></div></div>
+        <div class="vopt" onclick="multi(this,'q-ins',2)" data-val="State Farm"><div class="vtick">✓</div><div style="background:#8B1A1A;height:60px;display:flex;align-items:center;justify-content:center"><span style="color:#fff;font-family:Georgia,serif;font-size:16px;font-weight:700">State Farm</span></div><div class="vlbl">State Farm<span class="vsub" data-pt="Vermelho, forte, americano" data-en="Red, bold, American">Vermelho, forte, americano</span></div></div>
+        <div class="vopt" onclick="multi(this,'q-ins',2)" data-val="Elegant Feel"><div class="vtick">✓</div><div style="background:linear-gradient(135deg,#6B3A5A,#9B5A8A);height:60px;display:flex;align-items:center;justify-content:center"><span style="color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600">Elegant Feel</span></div><div class="vlbl" data-pt="Tom feminino elegante" data-en="Elegant feminine tone">Tom feminino elegante<span class="vsub" data-pt="Vinho, rosa, sofisticado" data-en="Plum, rose, sophisticated">Vinho, rosa, sofisticado</span></div></div>
+        <div class="vopt" onclick="multi(this,'q-ins',2)" data-val="Luxe & Gold"><div class="vtick">✓</div><div style="background:#12100E;height:60px;display:flex;align-items:center;justify-content:center"><span style="color:#C9A84C;font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic">Luxe &amp; Gold</span></div><div class="vlbl" data-pt="Preto & Ouro premium" data-en="Premium Black & Gold">Preto &amp; Ouro premium<span class="vsub" data-pt="Escuro, dourado, exclusivo" data-en="Dark, gold, exclusive">Escuro, dourado, exclusivo</span></div></div>
+      </div>
     </div>
-
-    <div class="vis-opt" onclick="multi(this,'q-inspo',2)"><div class="chk">✓</div>
-      <div style="background:#1A3A5C;height:60px;display:flex;align-items:center;justify-content:center"><span style="color:#C9A84C;font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.1em">NEW YORK LIFE</span></div>
-      <div class="vlbl">New York Life<span class="vsub pt"> Autoridade, azul, clássico</span><span class="vsub en" style="display:none"> Authority, navy, classic</span></div>
-    </div>
-
-    <div class="vis-opt" onclick="multi(this,'q-inspo',2)"><div class="chk">✓</div>
-      <div style="background:#2D5A4A;height:60px;display:flex;align-items:center;justify-content:center"><span style="color:white;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600">Farmers</span></div>
-      <div class="vlbl">Farmers<span class="vsub pt"> Confiável, verde, familiar</span><span class="vsub en" style="display:none"> Reliable, green, family</span></div>
-    </div>
-
-    <div class="vis-opt" onclick="multi(this,'q-inspo',2)"><div class="chk">✓</div>
-      <div style="background:#8B1A1A;height:60px;display:flex;align-items:center;justify-content:center"><span style="color:white;font-family:Georgia,serif;font-size:16px;font-weight:700">State Farm</span></div>
-      <div class="vlbl">State Farm<span class="vsub pt"> Vermelho, forte, americano</span><span class="vsub en" style="display:none"> Red, bold, American</span></div>
-    </div>
-
-    <div class="vis-opt" onclick="multi(this,'q-inspo',2)"><div class="chk">✓</div>
-      <div style="background:linear-gradient(135deg,#6B3A5A,#9B5A8A);height:60px;display:flex;align-items:center;justify-content:center"><span style="color:white;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600">Elegant Feel</span></div>
-      <div class="vlbl"><span class="pt">Tom feminino elegante</span><span class="en" style="display:none">Elegant feminine tone</span><span class="vsub pt"> Vinho, rosa, sofisticado</span><span class="vsub en" style="display:none"> Plum, rose, sophisticated</span></div>
-    </div>
-
-    <div class="vis-opt" onclick="multi(this,'q-inspo',2)"><div class="chk">✓</div>
-      <div style="background:#12100E;height:60px;display:flex;align-items:center;justify-content:center"><span style="color:#C9A84C;font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;font-weight:300">Luxe &amp; Gold</span></div>
-      <div class="vlbl"><span class="pt">Preto &amp; Ouro premium</span><span class="en" style="display:none">Premium Black &amp; Gold</span><span class="vsub pt"> Escuro, dourado, exclusivo</span><span class="vsub en" style="display:none"> Dark, gold, exclusive</span></div>
-    </div>
-
+    <div class="field"><label class="lbl" id="q11a">Existe alguma marca que você definitivamente NÃO quer se parecer?</label><textarea id="q-bno" oninput="prog()"></textarea></div>
   </div>
 </div>
 
-<div class="field">
-  <label class="lbl" id="q11a">Existe alguma marca que você definitivamente NÃO quer se parecer?</label>
-  <textarea id="q-brand-no" oninput="updateProgress()"></textarea>
-</div>
-```
+<!-- 6: FINAL -->
 
+<div class="card">
+  <div class="card-hdr">
+    <div class="card-num">6</div>
+    <div><div class="card-title" id="s6t">Toques Finais</div><div class="card-desc" id="s6d">Mais algumas perguntas para completar o guia</div></div>
   </div>
-</div>
-
-<!-- ── SECTION 6: FINAL ── -->
-
-<div class="section">
-  <div class="section-header">
-    <div class="section-num">6</div>
-    <div>
-      <div class="section-title" id="s6t">Toques Finais</div>
-      <div class="section-desc"  id="s6d">Mais algumas perguntas para completar o guia</div>
+  <div class="card-body">
+    <div class="field">
+      <label class="lbl" id="q12a">Onde sua marca vai aparecer principalmente? (escolha todos)</label>
+      <div class="cgrid" id="q-ch">
+        <div class="copt" onclick="multi(this,'q-ch',99)"><div class="cbox">✓</div><span data-pt="Instagram / Facebook" data-en="Instagram / Facebook">Instagram / Facebook</span></div>
+        <div class="copt" onclick="multi(this,'q-ch',99)"><div class="cbox">✓</div><span data-pt="WhatsApp" data-en="WhatsApp">WhatsApp</span></div>
+        <div class="copt" onclick="multi(this,'q-ch',99)"><div class="cbox">✓</div><span data-pt="Cartão de visita" data-en="Business card">Cartão de visita</span></div>
+        <div class="copt" onclick="multi(this,'q-ch',99)"><div class="cbox">✓</div><span data-pt="Site / Landing page" data-en="Website / Landing page">Site / Landing page</span></div>
+        <div class="copt" onclick="multi(this,'q-ch',99)"><div class="cbox">✓</div><span data-pt="E-mail profissional" data-en="Professional email">E-mail profissional</span></div>
+        <div class="copt" onclick="multi(this,'q-ch',99)"><div class="cbox">✓</div><span data-pt="LinkedIn" data-en="LinkedIn">LinkedIn</span></div>
+        <div class="copt" onclick="multi(this,'q-ch',99)"><div class="cbox">✓</div><span data-pt="YouTube / TikTok" data-en="YouTube / TikTok">YouTube / TikTok</span></div>
+        <div class="copt" onclick="multi(this,'q-ch',99)"><div class="cbox">✓</div><span data-pt="Materiais impressos" data-en="Printed materials">Materiais impressos</span></div>
+      </div>
     </div>
-  </div>
-  <div class="section-body">
-
-```
-<div class="field">
-  <label class="lbl" id="q12a">Onde sua marca vai aparecer principalmente? (escolha todos)</label>
-  <div class="chk-grid" id="q-channels">
-    <div class="chk-opt" onclick="multi(this,'q-channels',99)"><div class="chk-box">✓</div><span>Instagram / Facebook</span></div>
-    <div class="chk-opt" onclick="multi(this,'q-channels',99)"><div class="chk-box">✓</div><span>WhatsApp</span></div>
-    <div class="chk-opt" onclick="multi(this,'q-channels',99)"><div class="chk-box">✓</div><span class="pt">Cartão de visita</span><span class="en" style="display:none">Business card</span></div>
-    <div class="chk-opt" onclick="multi(this,'q-channels',99)"><div class="chk-box">✓</div><span class="pt">Site / Landing page</span><span class="en" style="display:none">Website / Landing page</span></div>
-    <div class="chk-opt" onclick="multi(this,'q-channels',99)"><div class="chk-box">✓</div><span class="pt">E-mail profissional</span><span class="en" style="display:none">Professional email</span></div>
-    <div class="chk-opt" onclick="multi(this,'q-channels',99)"><div class="chk-box">✓</div><span>LinkedIn</span></div>
-    <div class="chk-opt" onclick="multi(this,'q-channels',99)"><div class="chk-box">✓</div><span>YouTube / TikTok</span></div>
-    <div class="chk-opt" onclick="multi(this,'q-channels',99)"><div class="chk-box">✓</div><span class="pt">Materiais impressos</span><span class="en" style="display:none">Printed materials</span></div>
-  </div>
-</div>
-
-<div class="field">
-  <label class="lbl" id="q13a">Em uma frase: o que torna você única como agente de seguros?</label>
-  <textarea id="q-unique" oninput="updateProgress()"></textarea>
-</div>
-
-<div class="field">
-  <label class="lbl" id="q14a">Há algo mais que você quer que os designers saibam?</label>
-  <textarea id="q-extra" oninput="updateProgress()"></textarea>
-</div>
-
-<div class="submit-wrap">
-  <button class="btn-submit" id="submitBtn" onclick="submitForm()">
-    <span id="submit-lbl">✦ Enviar meu Guia de Marca</span>
-  </button>
-  <div class="email-status" id="email-status"></div>
-</div>
-```
-
+    <div class="field"><label class="lbl" id="q13a">Em uma frase: o que torna você única como agente de seguros?</label><textarea id="q-uniq" oninput="prog()"></textarea></div>
+    <div class="field"><label class="lbl" id="q14a">Há algo mais que você quer que os designers saibam?</label><textarea id="q-extra" oninput="prog()"></textarea></div>
+    <div class="sub-wrap">
+      <button class="sub-btn" id="subbtn" onclick="submit()"><span id="sublbl">✦ Enviar meu Guia de Marca</span></button>
+      <div class="email-st" id="estatus"></div>
+    </div>
   </div>
 </div>
 
 <!-- SUMMARY -->
 
-<div class="sum-wrap" id="sumWrap">
-  <div class="sum-hdr">
-    <h2 id="sum-title">✦ Seu Guia de Marca está pronto!</h2>
-    <p  id="sum-sub">Aqui está um resumo — copie ou tire um print para compartilhar.</p>
-  </div>
-  <div class="sum-body" id="sumBody"></div>
-  <div class="sum-actions">
-    <button class="btn-act"         onclick="copyResults()"><span id="lbl-copy">📋 Copiar Respostas</span></button>
-    <button class="btn-act primary" onclick="window.print()"><span id="lbl-print">🖨️ Imprimir / Salvar PDF</span></button>
-    <button class="btn-act"         onclick="editAgain()"><span id="lbl-edit">✏️ Editar Respostas</span></button>
+<div class="sumwrap" id="sumwrap">
+  <div class="sumhdr"><h2 id="sumtitle">✦ Seu Guia de Marca está pronto!</h2><p id="sumsub">Aqui está um resumo — copie ou tire um print para compartilhar.</p></div>
+  <div class="sumbody" id="sumbody"></div>
+  <div class="sumbtns">
+    <button class="abtn" onclick="copyR()"><span id="lblcopy">📋 Copiar Respostas</span></button>
+    <button class="abtn pri" onclick="window.print()"><span id="lblprint">🖨️ Imprimir / PDF</span></button>
+    <button class="abtn" onclick="editR()"><span id="lbledit">✏️ Editar</span></button>
   </div>
 </div>
 
-</div><!-- /container -->
+</div><!-- /wrap -->
 <div class="toast" id="toast"></div>
 
 <script>
-// ── TRANSLATIONS ────────────────────────────────────────────────────
+// ── ALL TRANSLATIONS ────────────────────────────────────────────
 const TX = {
   ll:      ['Idioma:','Language:'],
-  'h-sub': ['Guia de Identidade Visual','Brand Identity Guide'],
-  'h-title':['Vamos criar a sua <em>marca</em>','Let\'s build your <em>brand</em>'],
-  'h-body': ['Responda com calma — não há respostas certas ou erradas. Suas escolhas vão guiar a criação da sua identidade visual completa.','Take your time — there are no right or wrong answers. Your choices will guide the creation of your complete visual identity.'],
-  'prog-lbl':['Progresso','Progress'],
-  s1t:['Seu Nome na Marca','Your Brand Name'],
-  s1d:['Como você quer aparecer para o mundo','How you want to appear to the world'],
+  hsub:    ['Guia de Identidade Visual','Brand Identity Guide'],
+  htitle:  ['Vamos criar a sua <em>marca</em>',"Let's build your <em>brand</em>"],
+  hbody:   ['Responda com calma — não há respostas certas ou erradas. Suas escolhas vão guiar a criação da sua identidade visual completa.','Take your time — there are no right or wrong answers. Your choices will guide the creation of your complete visual identity.'],
+  plbl:    ['Progresso','Progress'],
+  s1t:['Seu Nome na Marca','Your Brand Name'], s1d:['Como você quer aparecer para o mundo','How you want to appear to the world'],
   q1a:['Qual nome você quer usar na sua marca?','What name do you want to use for your brand?'],
   q1b:['Escreva exatamente como você quer que apareça — pode ser só o primeiro nome, o primeiro e último, ou qualquer combinação.','Write it exactly as you want it to appear — first name only, first and last, or any combination.'],
   q2a:['Você quer adicionar um slogan ou subtítulo?','Do you want to add a tagline or subtitle?'],
   q2b:['Ex: "Life Insurance Agent" · "Protegendo o que importa" · ou deixe em branco','Ex: "Life Insurance Agent" · "Protecting What Matters" · or leave blank'],
-  s2t:['Personalidade da Marca','Brand Personality'],
-  s2d:['Como você quer que as pessoas se sintam','How you want people to feel'],
+  s2t:['Personalidade da Marca','Brand Personality'], s2d:['Como você quer que as pessoas se sintam','How you want people to feel'],
   q3a:['Se a sua marca fosse uma pessoa, como ela seria? (escolha até 3)','If your brand were a person, what would they be like? (choose up to 3)'],
   q4a:['Qual é o público principal que você quer atingir?','Who is your primary target audience?'],
   q5a:['Qual tom de comunicação você prefere?','What communication tone do you prefer?'],
   q5b:['Escolha onde você se encaixa em cada escala','Choose where you fall on each scale'],
-  sc1l:['Formal ↔ Descontraído','Formal ↔ Casual'],
-  sc2l:['Sério ↔ Alegre','Serious ↔ Cheerful'],
-  s3t:['Cores da Marca','Brand Colors'],
-  s3d:['As cores que vão representar você','The colors that will represent you'],
+  sc1: ['Formal ↔ Descontraído','Formal ↔ Casual'],
+  sc2: ['Sério ↔ Alegre','Serious ↔ Cheerful'],
+  s3t:['Cores da Marca','Brand Colors'], s3d:['As cores que vão representar você','The colors that will represent you'],
   q6a:['Qual paleta faz você pensar: "É exatamente assim que me sinto"?','Which palette makes you think: "That\'s exactly how I feel"?'],
   q6b:['Escolha a que mais combina com você','Choose the one that feels most like you'],
   q7a:['Alguma cor que você definitivamente NÃO quer na sua marca?','Any color you definitely do NOT want in your brand?'],
   q8a:['Você tem alguma cor favorita que gostaria de incorporar?','Do you have a personal favorite color you\'d like to incorporate?'],
-  s4t:['Estilo de Tipografia','Typography Style'],
-  s4d:['A fonte diz muito sobre quem você é','Your font says a lot about who you are'],
+  s4t:['Estilo de Tipografia','Typography Style'], s4d:['A fonte diz muito sobre quem você é','Your font says a lot about who you are'],
   q9a:['Qual estilo de letra representa melhor sua marca?','Which letter style best represents your brand?'],
   q9b:['Veja como ficaria seu nome em cada estilo','See how your name looks in each style'],
-  s5t:['Inspiração e Referências','Inspiration & References'],
-  s5d:['O que você admira em outras marcas','What you admire in other brands'],
+  ft1:['Life Insurance · Proteção para sua família','Life Insurance · Protection for your family'],
+  ft2:['Life Insurance · Proteção para sua família','Life Insurance · Protection for your family'],
+  ft3:['Life Insurance · Proteção para sua família','Life Insurance · Protection for your family'],
+  ft4:['Life Insurance · Proteção para sua família','Life Insurance · Protection for your family'],
+  fb1:['Elegante / Clássica','Elegant / Classic'], fb2:['Moderna / Limpa','Modern / Clean'],
+  fb3:['Tradicional / Sólida','Traditional / Solid'], fb4:['Contemporânea / Bold','Contemporary / Bold'],
+  s5t:['Inspiração e Referências','Inspiration & References'], s5d:['O que você admira em outras marcas','What you admire in other brands'],
   q10a:['Qual dessas marcas tem um visual que você admira? (escolha até 2)','Which of these brands has a look you admire? (choose up to 2)'],
   q10b:['Não precisa ser de seguros — qualquer marca que te inspire','Doesn\'t need to be insurance — any brand that inspires you'],
   q11a:['Existe alguma marca que você definitivamente NÃO quer se parecer?','Is there any brand you definitely do NOT want to look like?'],
-  s6t:['Toques Finais','Final Touches'],
-  s6d:['Mais algumas perguntas para completar o guia','A few more questions to complete the guide'],
+  s6t:['Toques Finais','Final Touches'], s6d:['Mais algumas perguntas para completar o guia','A few more questions to complete the guide'],
   q12a:['Onde sua marca vai aparecer principalmente? (escolha todos)','Where will your brand mainly appear? (choose all that apply)'],
   q13a:['Em uma frase: o que torna você única como agente de seguros?','In one sentence: what makes you unique as an insurance agent?'],
   q14a:['Há algo mais que você quer que os designers saibam?','Is there anything else you want the designers to know?'],
-  'submit-lbl':['✦ Enviar meu Guia de Marca','✦ Submit my Brand Guide'],
-  'sum-title':['✦ Seu Guia de Marca está pronto!','✦ Your Brand Guide is ready!'],
-  'sum-sub':['Aqui está um resumo — copie ou tire um print para compartilhar.','Here\'s a summary — copy or screenshot to share.'],
-  'lbl-copy':['📋 Copiar Respostas','📋 Copy Answers'],
-  'lbl-print':['🖨️ Imprimir / Salvar PDF','🖨️ Print / Save PDF'],
-  'lbl-edit':['✏️ Editar Respostas','✏️ Edit Answers'],
+  sublbl:  ['✦ Enviar meu Guia de Marca','✦ Submit my Brand Guide'],
+  sumtitle:['✦ Seu Guia de Marca está pronto!','✦ Your Brand Guide is ready!'],
+  sumsub:  ['Aqui está um resumo — copie ou tire um print para compartilhar.','Here\'s a summary — copy or screenshot to share.'],
+  lblcopy: ['📋 Copiar Respostas','📋 Copy Answers'],
+  lblprint:['🖨️ Imprimir / PDF','🖨️ Print / Save PDF'],
+  lbledit: ['✏️ Editar','✏️ Edit Answers'],
 };
 
-// Summary labels [pt, en]
 const SL = {
-  sName:       ['Nome da Marca','Brand Name'],
-  brandName:   ['Nome escolhido','Chosen name'],
-  tagline:     ['Slogan/Subtítulo','Tagline'],
-  sPersonality:['Personalidade & Público','Personality & Audience'],
-  personality: ['Personalidade','Personality'],
-  audience:    ['Público-alvo','Target audience'],
-  toneF:       ['Tom formal/informal','Formal/casual tone'],
-  toneS:       ['Tom sério/alegre','Serious/cheerful tone'],
-  sColors:     ['Cores','Colors'],
-  palette:     ['Paleta escolhida','Chosen palette'],
-  colorNo:     ['Cores a evitar','Colors to avoid'],
-  colorYes:    ['Cor favorita','Favorite color'],
-  sType:       ['Tipografia','Typography'],
-  font:        ['Estilo de fonte','Font style'],
-  sInspo:      ['Inspiração','Inspiration'],
-  inspo:       ['Marcas admiradas','Admired brands'],
-  brandNo:     ['Marcas a evitar','Brands to avoid'],
-  sFinal:      ['Canais & Diferenciais','Channels & Differentiators'],
-  channels:    ['Canais principais','Main channels'],
-  unique:      ['Diferencial único','Unique differentiator'],
-  extra:       ['Notas adicionais','Additional notes'],
+  sName:['Nome da Marca','Brand Name'], bname:['Nome escolhido','Chosen name'], tag:['Slogan/Subtítulo','Tagline'],
+  sPer:['Personalidade & Público','Personality & Audience'], per:['Personalidade','Personality'],
+  aud:['Público-alvo','Target audience'], tf:['Tom formal/informal','Formal/casual tone'], ts:['Tom sério/alegre','Serious/cheerful tone'],
+  sCol:['Cores','Colors'], pal:['Paleta escolhida','Chosen palette'], cno:['Cores a evitar','Colors to avoid'], cyes:['Cor favorita','Favorite color'],
+  sTyp:['Tipografia','Typography'], font:['Estilo de fonte','Font style'],
+  sIns:['Inspiração','Inspiration'], ins:['Marcas admiradas','Admired brands'], bno:['Marcas a evitar','Brands to avoid'],
+  sFin:['Canais & Diferenciais','Channels & Differentiators'], ch:['Canais','Channels'],
+  uniq:['Diferencial único','Unique differentiator'], extra:['Notas adicionais','Additional notes'],
 };
 
-let L = 0; // 0=PT 1=EN
+let L = 0;
 
 function setLang(l) {
-  L = l==='en' ? 1 : 0;
-  document.getElementById('btn-pt').classList.toggle('active', L===0);
-  document.getElementById('btn-en').classList.toggle('active', L===1);
-  Object.keys(TX).forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.innerHTML = TX[id][L];
+  L = l;
+  document.querySelectorAll('.lang-btn').forEach((b,i)=>b.classList.toggle('active',i===l));
+  // Translate ID-based elements
+  Object.keys(TX).forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.innerHTML=TX[id][l];
   });
-  document.querySelectorAll('.pt').forEach(e => e.style.display = L===0?'':'none');
-  document.querySelectorAll('.en').forEach(e => e.style.display = L===1?'':'none');
+  // Translate data-pt/data-en elements
+  document.querySelectorAll('[data-pt]').forEach(el=>{
+    el.textContent = l===0 ? el.dataset.pt : el.dataset.en;
+  });
+  // Scale buttons
+  document.querySelectorAll('.sbtn').forEach(btn=>{
+    btn.textContent = l===0 ? btn.dataset.pt : btn.dataset.en;
+  });
 }
 
-// ── SELECTION ───────────────────────────────────────────────────────
-function one(el, g) {
-  document.querySelectorAll('#'+g+' .vis-opt,#'+g+' .pal-opt,#'+g+' .font-opt').forEach(x=>x.classList.remove('selected'));
-  el.classList.add('selected'); updateProgress();
+// ── SELECTION ──────────────────────────────────────────────────
+function one(el,g){
+  document.querySelectorAll('#'+g+' .vopt,#'+g+' .popt,#'+g+' .fopt').forEach(x=>x.classList.remove('sel'));
+  el.classList.add('sel'); prog();
 }
-function multi(el, g, max) {
-  const all = document.querySelectorAll('#'+g+' .vis-opt,#'+g+' .pal-opt,#'+g+' .mood-opt,#'+g+' .chk-opt');
-  const sel = Array.from(all).filter(x=>x.classList.contains('selected'));
-  if (el.classList.contains('selected')) el.classList.remove('selected');
-  else if (sel.length < max) el.classList.add('selected');
-  else showToast(L===0?'Máximo de '+max+' escolhas':'Max '+max+' selections');
-  updateProgress();
+function multi(el,g,max){
+  const all=document.querySelectorAll('#'+g+' .vopt,#'+g+' .popt,#'+g+' .mopt,#'+g+' .copt');
+  const n=Array.from(all).filter(x=>x.classList.contains('sel')).length;
+  if(el.classList.contains('sel')) el.classList.remove('sel');
+  else if(n<max) el.classList.add('sel');
+  else toast(L?'Max '+max+' selections':'Máximo de '+max+' escolhas');
+  prog();
 }
-function scl(btn, g) {
-  document.querySelectorAll('#'+g+' .scale-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active'); updateProgress();
+function scl(btn,g){
+  document.querySelectorAll('#'+g+' .sbtn').forEach(b=>b.classList.remove('act'));
+  btn.classList.add('act'); prog();
 }
 
-// ── PROGRESS ────────────────────────────────────────────────────────
-function updateProgress() {
-  const checks = [
+// ── PROGRESS ──────────────────────────────────────────────────
+function prog(){
+  const c=[
     !!document.getElementById('q-name').value.trim(),
-    document.querySelectorAll('#q-personality .selected').length > 0,
-    document.querySelectorAll('#q-palette .selected').length > 0,
-    document.querySelectorAll('#q-font .selected').length > 0,
-    document.querySelectorAll('#q-inspo .selected').length > 0,
-    !!document.getElementById('q-unique').value.trim(),
+    document.querySelectorAll('#q-per .sel').length>0,
+    document.querySelectorAll('#q-pal .sel').length>0,
+    document.querySelectorAll('#q-font .sel').length>0,
+    document.querySelectorAll('#q-ins .sel').length>0,
+    !!document.getElementById('q-uniq').value.trim(),
   ];
-  const pct = Math.round(checks.filter(Boolean).length/checks.length*100);
-  document.getElementById('prog-fill').style.width = pct+'%';
-  document.getElementById('prog-pct').textContent = pct+'%';
+  const p=Math.round(c.filter(Boolean).length/c.length*100);
+  document.getElementById('pfill').style.width=p+'%';
+  document.getElementById('ppct').textContent=p+'%';
 }
 
-// ── SECTION REVEAL ──────────────────────────────────────────────────
-new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.06})
-  .observe.bind(new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.06}));
-(()=>{
-  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.06});
-  document.querySelectorAll('.section').forEach(s=>obs.observe(s));
-})();
-
-// ── DATA COLLECTION ─────────────────────────────────────────────────
-function getSelected(g) {
-  return Array.from(document.querySelectorAll('#'+g+' .selected')).map(el=>{
-    const b = el.querySelector(L===0?'b.pt':'b.en') || el.querySelector('b');
-    if (b) return b.textContent.trim();
-    const lbl = el.querySelector('.vlbl,.plbl,.fbadge,.mood-lbl,.chk-opt');
-    return (lbl||el).childNodes[0]?.textContent?.trim()||el.textContent.split('\n')[0].trim();
-  }).filter(Boolean).join(', ') || '—';
+// ── DATA ──────────────────────────────────────────────────────
+function getSel(g){
+  return Array.from(document.querySelectorAll('#'+g+' .sel')).map(el=>{
+    if(el.dataset.val) return el.dataset.val;
+    const sp=el.querySelector('[data-pt]');
+    if(sp) return L?sp.dataset.en:sp.dataset.pt;
+    const lbl=el.querySelector('.mlbl,.plbl,.vlbl');
+    return lbl?lbl.childNodes[0].textContent.trim():el.textContent.trim().split('\n')[0];
+  }).filter(Boolean).join(', ')||'—';
 }
-function getScale(g) {
-  const btn = document.querySelector('#'+g+' .scale-btn.active');
-  if (!btn) return '—';
-  const sp = btn.querySelector(L===0?'.pt':'.en');
-  return sp ? sp.textContent.trim() : btn.textContent.trim();
+function getScl(g){
+  const b=document.querySelector('#'+g+' .sbtn.act');
+  return b?(L?b.dataset.en:b.dataset.pt):'—';
 }
-function s(key) { return SL[key][L]; }
-function val(id) { return document.getElementById(id).value.trim() || '—'; }
+function v(id){return document.getElementById(id).value.trim()||'—';}
+function s(k){return SL[k][L];}
 
-function buildData() {
+function buildData(){
   return [
-    { title: s('sName'), rows: [[s('brandName'), val('q-name')],[s('tagline'), val('q-tagline')]] },
-    { title: s('sPersonality'), rows: [
-      [s('personality'), getSelected('q-personality')],
-      [s('audience'),    getSelected('q-audience')],
-      [s('toneF'),       getScale('scale-formal')],
-      [s('toneS'),       getScale('scale-serious')],
-    ]},
-    { title: s('sColors'), rows: [
-      [s('palette'),  getSelected('q-palette')],
-      [s('colorNo'),  val('q-color-no')],
-      [s('colorYes'), val('q-color-yes')],
-    ]},
-    { title: s('sType'), rows: [[s('font'), getSelected('q-font')]] },
-    { title: s('sInspo'), rows: [[s('inspo'), getSelected('q-inspo')],[s('brandNo'), val('q-brand-no')]] },
-    { title: s('sFinal'), rows: [
-      [s('channels'), getSelected('q-channels')],
-      [s('unique'),   val('q-unique')],
-      [s('extra'),    val('q-extra')],
-    ]},
+    {t:s('sName'),rows:[[s('bname'),v('q-name')],[s('tag'),v('q-tagline')]]},
+    {t:s('sPer'),rows:[[s('per'),getSel('q-per')],[s('aud'),getSel('q-aud')],[s('tf'),getScl('scale-f')],[s('ts'),getScl('scale-s')]]},
+    {t:s('sCol'),rows:[[s('pal'),getSel('q-pal')],[s('cno'),v('q-cnо')],[s('cyes'),v('q-cyes')]]},
+    {t:s('sTyp'),rows:[[s('font'),getSel('q-font')]]},
+    {t:s('sIns'),rows:[[s('ins'),getSel('q-ins')],[s('bno'),v('q-bno')]]},
+    {t:s('sFin'),rows:[[s('ch'),getSel('q-ch')],[s('uniq'),v('q-uniq')],[s('extra'),v('q-extra')]]},
   ];
 }
 
-// ── SUBMIT ──────────────────────────────────────────────────────────
-async function submitForm() {
-  const name = document.getElementById('q-name').value.trim();
-  if (!name) {
-    showToast(L===0?'Por favor, escreva o nome da marca.':'Please enter your brand name.');
-    document.getElementById('q-name').focus();
-    return;
-  }
-
-  const data = buildData();
-
-  // Show summary
-  let html = '';
-  data.forEach(sec => {
-    html += '<div class="sum-sec"><div class="sum-sec-title">'+sec.title+'</div>';
-    sec.rows.forEach(r => html += '<div class="sum-row"><div class="sum-key">'+r[0]+'</div><div class="sum-val">'+r[1]+'</div></div>');
-    html += '</div>';
+// ── SUBMIT ──────────────────────────────────────────────────────
+async function submit(){
+  const name=document.getElementById('q-name').value.trim();
+  if(!name){toast(L?'Please enter your brand name.':'Por favor, escreva o nome da marca.');document.getElementById('q-name').focus();return;}
+  const data=buildData();
+  // show summary
+  let html='';
+  data.forEach(sec=>{
+    html+='<div class="sumsec"><div class="sumsec-title">'+sec.t+'</div>';
+    sec.rows.forEach(r=>html+='<div class="sumrow"><div class="sumkey">'+r[0]+'</div><div class="sumval">'+r[1]+'</div></div>');
+    html+='</div>';
   });
-  document.getElementById('sumBody').innerHTML = html;
-  document.getElementById('sumWrap').classList.add('show');
-  setTimeout(()=>document.getElementById('sumWrap').scrollIntoView({behavior:'smooth',block:'start'}), 100);
-
-  // Build email body
-  let body = '═══ BRAND GUIDE — ' + name + ' ═══\n';
-  body += 'Submitted: ' + new Date().toLocaleString('en-US') + '\n\n';
-  data.forEach(sec => {
-    body += '── ' + sec.title.toUpperCase() + ' ──\n';
-    sec.rows.forEach(r => body += '  ' + r[0] + ': ' + r[1] + '\n');
-    body += '\n';
-  });
-
-  // Send email
-  const btn = document.getElementById('submitBtn');
-  const status = document.getElementById('email-status');
-  btn.disabled = true;
-  status.className = 'email-status sending';
-  status.textContent = L===0 ? '⏳ Enviando...' : '⏳ Sending...';
-
-  try {
+  document.getElementById('sumbody').innerHTML=html;
+  document.getElementById('sumwrap').classList.add('show');
+  setTimeout(()=>document.getElementById('sumwrap').scrollIntoView({behavior:'smooth',block:'start'}),100);
+  // email
+  let body='═══ BRAND GUIDE — '+name+' ═══\nSubmitted: '+new Date().toLocaleString()+'\n\n';
+  data.forEach(sec=>{body+='── '+sec.t.toUpperCase()+' ──\n';sec.rows.forEach(r=>body+='  '+r[0]+': '+r[1]+'\n');body+='\n';});
+  const btn=document.getElementById('subbtn'),st=document.getElementById('estatus');
+  btn.disabled=true; st.className='email-st sending'; st.textContent=L?'⏳ Sending...':'⏳ Enviando...';
+  try{
     emailjs.init(EMAILJS_PUBLIC_KEY);
-    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-      to_email:  RECIPIENT_EMAIL,
-      from_name: name,
-      subject:   '✦ Brand Guide: ' + name,
-      message:   body,
-    });
-    status.className = 'email-status ok';
-    status.textContent = L===0
-      ? '✓ Enviado! Nicole receberá suas respostas em breve.'
-      : '✓ Sent! Nicole will receive your responses shortly.';
-    showToast(L===0 ? '✦ Guia enviado com sucesso!' : '✦ Guide sent successfully!');
-  } catch(err) {
-    status.className = 'email-status err';
-    status.textContent = L===0
-      ? '⚠ Não foi possível enviar o e-mail. Suas respostas estão salvas abaixo — copie ou imprima.'
-      : '⚠ Email could not be sent. Your answers are saved below — copy or print them.';
-    btn.disabled = false;
-    console.error('EmailJS:', err);
+    await emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,{to_email:RECIPIENT_EMAIL,from_name:name,subject:'✦ Brand Guide: '+name,message:body});
+    st.className='email-st ok'; st.textContent=L?'✓ Sent to Nicole!':'✓ Enviado para Nicole!';
+    toast(L?'✦ Guide sent!':'✦ Guia enviado!');
+  }catch(e){
+    st.className='email-st err'; st.textContent=L?'⚠ Email failed — copy your answers below.':'⚠ Erro ao enviar — copie suas respostas abaixo.';
+    btn.disabled=false; console.error(e);
   }
 }
 
-function copyResults() {
-  const data = buildData();
-  let t = '── BRAND GUIDE ──\n\n';
-  data.forEach(sec => {
-    t += sec.title + '\n';
-    sec.rows.forEach(r => t += '  ' + r[0] + ': ' + r[1] + '\n');
-    t += '\n';
-  });
-  navigator.clipboard.writeText(t).then(()=>showToast(L===0?'✓ Copiado!':'✓ Copied!'));
+function copyR(){
+  const data=buildData();
+  let t='── BRAND GUIDE ──\n\n';
+  data.forEach(sec=>{t+=sec.t+'\n';sec.rows.forEach(r=>t+='  '+r[0]+': '+r[1]+'\n');t+='\n';});
+  navigator.clipboard.writeText(t).then(()=>toast(L?'✓ Copied!':'✓ Copiado!'));
 }
+function editR(){document.getElementById('sumwrap').classList.remove('show');document.getElementById('subbtn').disabled=false;document.getElementById('estatus').textContent='';window.scrollTo({top:0,behavior:'smooth'});}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
 
-function editAgain() {
-  document.getElementById('sumWrap').classList.remove('show');
-  document.getElementById('submitBtn').disabled = false;
-  document.getElementById('email-status').textContent = '';
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'), 3000);
-}
-
-document.documentElement.style.visibility='visible'; setLang('pt');
-updateProgress();
+setLang(0);
+prog();
 </script>
 
-<!--
-╔══════════════════════════════════════════════════════════════════╗
-║  EMAILJS SETUP — FREE, ~3 MINUTES, NO BACKEND NEEDED            ║
-╠══════════════════════════════════════════════════════════════════╣
-║                                                                  ║
-║  STEP 1 — Create free account                                    ║
-║    → https://www.emailjs.com  (Sign Up, free tier = 200/mo)     ║
-║                                                                  ║
-║  STEP 2 — Add Email Service                                      ║
-║    Dashboard → Email Services → Add New Service                  ║
-║    Choose Gmail → connect nlepage.ao.ail@gmail.com              ║
-║    Copy the Service ID → paste into EMAILJS_SERVICE_ID above    ║
-║                                                                  ║
-║  STEP 3 — Create Email Template                                  ║
-║    Dashboard → Email Templates → Create New Template            ║
-║    To:       {{to_email}}                                        ║
-║    Subject:  {{subject}}                                         ║
-║    Body:     {{message}}                                         ║
-║    Save → Copy Template ID → paste into EMAILJS_TEMPLATE_ID     ║
-║                                                                  ║
-║  STEP 4 — Get Public Key                                         ║
-║    Dashboard → Account → General → Public Key                   ║
-║    Paste into EMAILJS_PUBLIC_KEY above                           ║
-║                                                                  ║
-║  Done. Form will email results directly to your Gmail.           ║
-╚══════════════════════════════════════════════════════════════════╝
--->
-
+</body>
 </html>
